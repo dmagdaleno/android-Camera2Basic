@@ -24,6 +24,8 @@ internal class ImageSaver(
 ) : Runnable {
 
     override fun run() {
+        Log.d(TAG, "--> ImageSaver.run")
+
         val buffer = image.planes[0].buffer
         val bytes = ByteArray(buffer.remaining())
         buffer.get(bytes)
@@ -50,6 +52,6 @@ internal class ImageSaver(
         /**
          * Tag for the [Log].
          */
-        private val TAG = "ImageSaver"
+        private const val TAG = "ImageSaver"
     }
 }
